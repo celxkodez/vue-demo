@@ -13,7 +13,7 @@ Vue.use(VueRouter);
 Vue.use(Vuex);
 
 const router = new VueRouter({
-    router,
+    routes,
     mode: 'history'
 });
 
@@ -38,7 +38,7 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: '#app',
-    routes,
+    router,
     components: {
         Hello
     }

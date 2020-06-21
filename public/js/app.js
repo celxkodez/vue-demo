@@ -53838,7 +53838,7 @@ __webpack_require__(/*! ./bootstrap */ "./public/dashboard/bootstrap.js");
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_2__["default"]);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
-  router: router,
+  routes: _routes__WEBPACK_IMPORTED_MODULE_3__["routes"],
   mode: 'history'
 });
 /**
@@ -53860,7 +53860,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
-  routes: _routes__WEBPACK_IMPORTED_MODULE_3__["routes"],
+  router: router,
   components: {
     Hello: _components_Hello__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
