@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('dashboard');
+// });
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
+
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::any('/', function () {
+        return view('dashboard');
+    });
+});
+
+Route::group(['prefix' => 'analysis'], function () {
+    Route::any('/', function () {
+        return view('dashboard');
+    });
 });
