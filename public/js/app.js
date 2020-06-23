@@ -2127,10 +2127,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 // import Hello from './Hello';
 // import Stocks from './Stocks';
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'product-form'
+  name: 'product-form',
+  data: function data() {
+    return {
+      name: '',
+      index: '',
+      price: '',
+      othername: ''
+    };
+  },
+  methods: {
+    addProduct: function addProduct() {
+      var data = {
+        name: this.name,
+        index: this.index,
+        price: this.price,
+        othername: this.othername
+      };
+      this.$store.state.products.push(data); // return this.$router.push('/dashboard/index');
+    }
+  }
 });
 
 /***/ }),
@@ -2215,18 +2238,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 // import Hello from './Hello';
 // import Stocks from './Stocks';
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'product-page'
+  name: 'product-page',
+  computed: {
+    productDetails: function productDetails() {
+      return this.$store.state.products;
+    }
+  }
 });
 
 /***/ }),
@@ -38072,60 +38092,138 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("form", { attrs: { action: "" } }, [
+    _c("h1", [_vm._v("Add new Product")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "product" } }, [_vm._v("Product name")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.name,
+            expression: "name"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", id: "product" },
+        domProps: { value: _vm.name },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.name = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.name))])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "price" } }, [_vm._v("Price")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.price,
+            expression: "price"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", id: "price" },
+        domProps: { value: _vm.price },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.price = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.price))])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "index" } }, [_vm._v("index number")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.index,
+            expression: "index"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", id: "index" },
+        domProps: { value: _vm.index },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.index = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.index))])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "other" } }, [_vm._v("other name")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.othername,
+            expression: "othername"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", id: "other" },
+        domProps: { value: _vm.othername },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.othername = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.othername))])
+    ]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-primary",
+        attrs: { type: "submit" },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.addProduct($event)
+          }
+        }
+      },
+      [_vm._v("Submit")]
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("form", { attrs: { action: "" } }, [
-      _c("h1", [_vm._v("Add new Product")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "product" } }, [_vm._v("Product name")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", id: "product" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "price" } }, [_vm._v("Price")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", id: "price" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "index" } }, [_vm._v("index number")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", id: "index" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "other" } }, [_vm._v("other name")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "text", id: "other" }
-        })
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-        [_vm._v("Submit")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -38217,52 +38315,44 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("h1", [_vm._v("Product Table")]),
+    _vm._v(" "),
+    _c("table", { staticClass: "table table-light table-hover" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        _vm._l(_vm.productDetails, function(product) {
+          return _c("tr", [
+            _c("td", [_vm._v(_vm._s(product.name))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(product.price))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(product.index))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(product.othername))])
+          ])
+        }),
+        0
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("Product Table")]),
-      _vm._v(" "),
-      _c("table", { staticClass: "table table-light table-hover" }, [
-        _c("thead", [
-          _c("tr", [
-            _c("th", [_vm._v("Firstname")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Lastname")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Email")])
-          ])
-        ]),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Product Name")]),
         _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v("John")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("Doe")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("john@example.com")])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", [_vm._v("Mary")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("Moe")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("mary@example.com")])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", [_vm._v("July")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("Dooley")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("july@example.com")])
-          ])
-        ])
+        _c("th", [_vm._v("Price")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Index number")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Other Name")])
       ])
     ])
   }
@@ -55161,7 +55251,29 @@ __webpack_require__.r(__webpack_exports__);
       one: 1
     }, {
       one: 2
+    }],
+    products: [{
+      name: 'product one',
+      index: '1',
+      price: '12KES',
+      othername: 'p one'
+    }, {
+      name: 'product two',
+      index: '2',
+      price: '14KES',
+      othername: 'p two'
+    }, {
+      name: 'product three',
+      index: '4',
+      price: '54KES',
+      othername: 'p three'
     }]
+  },
+  mutations: {
+    addProduct: function addProduct(payload) {
+      // this = this;
+      return this.state.products.push(payload);
+    }
   }
 });
 

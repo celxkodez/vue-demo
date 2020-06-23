@@ -4,26 +4,18 @@
           <table class="table table-light table-hover">
                 <thead>
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Index number</th>
+                    <th>Other Name</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
+                <tr v-for="product in productDetails">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.index }}</td>
+                    <td>{{ product.othername }}</td>
                 </tr>
                 </tbody>
             </table>
@@ -37,6 +29,11 @@
 
 
     export default {
-    name: 'product-page'
+    name: 'product-page',
+    computed: {
+        productDetails: function(){
+            return this.$store.state.products;
+        }
+    }
     }
 </script>
