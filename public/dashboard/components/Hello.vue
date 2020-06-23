@@ -8,6 +8,14 @@
                     <div class="card-body">
                         I'm an example component.
                     </div>
+
+                    <div>
+                        <h1>Datas</h1>
+
+                        <ul>
+                            <li v-for="data in store">{{ data.one }}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -16,9 +24,15 @@
 
 <script>
     export default {
-        name:'hello'
+        name:'hello',
         // mounted() {
         //     console.log('Component mounted.')
         // }
+
+        computed: {
+            store(){
+               return this.$store.state.data;
+            }
+        },
     }
 </script>

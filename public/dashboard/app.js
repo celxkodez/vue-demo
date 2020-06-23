@@ -2,20 +2,20 @@
 require('./bootstrap');
 
 import Vue from  'vue';
-import VueRouter from 'vue-router';
+
 import Vuex from 'vuex';
-import {routes} from './routes';
+
+import { store } from '/.store/store'
 // import Layout from './components/Layout.vue';
 import Hello from './components/Hello';
 
 
-Vue.use(VueRouter);
+
 Vue.use(Vuex);
 
-const router = new VueRouter({
-    routes,
-    mode: 'history'
-});
+
+
+// const store = new Vuex.Store(store);
 
 /**
  * The following block of code may be used to automatically register your
@@ -39,6 +39,7 @@ const router = new VueRouter({
 const app = new Vue({
     el: '#app',
     router,
+    store,
     components: {
         Hello
     }
