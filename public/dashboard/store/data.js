@@ -4,7 +4,7 @@
 export default {
   state: {
 
-    data: [
+    datas: [
       { 
         one: 1
        },

@@ -20,14 +20,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // });
 
-Route::group(['prefix' => 'dashboard'], function () {
-    Route::any('/', function () {
-        return view('dashboard');
-    });
-});
 
-Route::group(['prefix' => 'analysis'], function () {
-    Route::any('/', function () {
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::get('/{route}', function () {
         return view('dashboard');
-    });
+    })->where('route', '.*');
 });

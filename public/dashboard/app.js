@@ -1,17 +1,15 @@
 
 require('./bootstrap');
-
-import Vue from  'vue';
-
-import Vuex from 'vuex';
-
-import { store } from '/.store/store'
+import Vue from 'vue';
+import {store} from './store/store';
+import {router} from './router/router';
 // import Layout from './components/Layout.vue';
-import Hello from './components/Hello';
+// import Hello from './components/Hello';
+import Basic from './components/Basic';
 
 
 
-Vue.use(Vuex);
+
 
 
 
@@ -40,7 +38,5 @@ const app = new Vue({
     el: '#app',
     router,
     store,
-    components: {
-        Hello
-    }
+   render: h =>h(Basic)
 });

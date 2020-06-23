@@ -1,10 +1,13 @@
 <template>
     <div class="container">
+
+        <!-- <nav>
+            <router-view></router-view>
+        </nav> -->
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Example Component</div>
-
                     <div class="card-body">
                         I'm an example component.
                     </div>
@@ -31,7 +34,7 @@
 
         computed: {
             store(){
-               return this.$store.state.data;
+               return this.$store.state.datas;
             }
         },
     }
